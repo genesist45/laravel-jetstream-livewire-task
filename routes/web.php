@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\studentController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 
 Route::get('/', function () {
@@ -21,8 +21,8 @@ Route::middleware([
     Route::get('subjects/create', [SubjectController::class, 'create'])->name('subjects.create');
     Route::post('/subject/store', [SubjectController::class, 'store'])->name('subject.store');
 
-    Route::get('/students', [studentController::class, 'index'])->name('students');
-    Route::get('/student/create', [studentController::class, 'store'])->name('student.store');
+    Route::get('/students', [StudentController::class, 'index'])->name('students');
+    Route::get('/student/create', [StudentController::class, 'store'])->name('student.store');
 });
 
-Route::resource('students', studentController::class);
+Route::resource('students', StudentController::class);
