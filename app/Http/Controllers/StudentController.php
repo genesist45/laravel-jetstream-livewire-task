@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\studentModel;
+use App\Models\StudentModel;
 
-class studentController extends Controller
+class StudentController extends Controller
 {
      public function index(){
-        $students = new studentModel();
+        $students = new StudentModel();
         $students = $students->all();
 
         return response()->json($students, 200, [], JSON_PRETTY_PRINT);
     }
     public function store(){
 
-        $student = new studentModel();
+        $student = new StudentModel();
 
         $data = [
             'first_name' => 'John',
